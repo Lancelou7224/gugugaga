@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(calib_demo LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(OpenCV REQUIRED COMPONENTS core imgproc imgcodecs highgui calib3d)
+add_executable(calib_demo main.cpp)
+target_link_libraries(calib_demo PRIVATE ${OpenCV_LIBS})
+target_include_directories(calib_demo PRIVATE ${OpenCV_INCLUDE_DIRS})
